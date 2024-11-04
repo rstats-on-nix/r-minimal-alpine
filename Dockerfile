@@ -28,14 +28,17 @@ RUN mkdir -m 0755 /nix && \
     done
 
 # Install Nix
-RUN sh <(curl -L https://nixos.org/nix/install) --daemon --yes
+RUN sh <(curl -L https://nixos.org/nix/install) \
+    --daemon --yes
+
+RUN echo 'extra-experimental-features = flakes nix-command' >> /etc/nix/nix.conf
 
 # nix rc service script
 COPY nix-daemon.sh /etc/init.d/nix-daemon
 # Make the script executable
 RUN chmod a+rx /etc/init.d/nix-daemon && \
     cp /root/.nix-profile/bin/nix-daemon /usr/sbin # && \
-    # rc-update add nix-daemon
+    rc-update add nix-daemon
 
 WORKDIR /app
 COPY . /app

@@ -17,7 +17,8 @@ let
       nix
       podman
       R;
-  } ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [ pkgs.vfkit ];
+  } ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [ pkgs.vfkit ]
+    ++ pkgs.lib.optionals pkgs.stdenv.isLinux [ pkgs.qemu ];
   
 in
 
