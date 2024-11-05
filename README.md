@@ -4,7 +4,8 @@ This repo provisions a minimal nix-R container setup intended to run
 efficient data science DevOps workflows.
 
 - provision containers as remote builders for a nix store.
-- 
+- provision containers for CI/CD environments, e.g. for data engineering
+  purposes.
 
 This is an experimental proof of concept to deliver a minimal alpine image 
 provinding nix in a multiuser docker environment.
@@ -74,13 +75,16 @@ to me if you think the ideas are stubborn or have security holes.
 
 - [RedHat blog *"How Podman runs on Macs and other container FAQs"*.](https://www.redhat.com/en/blog/podman-mac-machine-architecture)
   Deep dive that helped me to understand how the podman client is interacting
-  with the VM, and how
+  with the VM, and how QEMU injection processes etc. work.
 
+### Pinning mechanisms in Nix
+
+- https://jade.fyi/blog/pinning-nixos-with-npins/
 
 https://mitchellh.com/writing/nix-with-dockerfiles
 https://xeiaso.net/blog/i-was-wrong-about-nix-2020-02-10/
 https://github.com/nmattia/niv
--> npins is successor: https://jade.fyi/blog/pinning-nixos-with-npins/
+-> npins is successor: 
 https://vaibhavsagar.com/blog/2018/05/27/quick-easy-nixpkgs-pinning/
 https://jade.fyi/blog/pinning-packages-in-nix/
 https://github.com/nix-community/docker-nixpkgs
