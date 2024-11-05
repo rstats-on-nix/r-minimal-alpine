@@ -3,6 +3,9 @@
 This repo provisions a minimal nix-R container setup intended to run
 efficient data science DevOps workflows.
 
+- provision containers as remote builders for a nix store.
+- 
+
 This is an experimental proof of concept to deliver a minimal alpine image 
 provinding nix in a multiuser docker environment.
 
@@ -26,6 +29,11 @@ to me if you think the ideas are stubborn or have security holes.
 
 
 # 🔀 Ways forward, backporting
+
+- I heard that `pkgs.dockerTools.buildImage` can make potentially smaller docker
+  images. So yeah, the same `Dockerfile` can maybe just be injected into
+  `podman run` using `result`. Say "hi" to declarative `docker.nix` files for
+  cross-platform nix builds.
 
 # 🥗 Recipe
 
