@@ -64,6 +64,10 @@ to me if you think the ideas are stubborn or have security holes.
   environment for local development, CI, and building the final Docker image for
   for production purposes. *"These problems all go away with Nix."
 
+- [Nixery: an ad-hoc container image registry that provides packages from the Nix package manager.](https://nixery.dev/)
+
+- Discord: ["How to build a docker image with a working Nix inside it"](https://discourse.nixos.org/t/how-to-build-a-docker-image-with-a-working-nix-inside-it/32960)
+
 ### Virtualization, containers and networking
 
 -  Nested virtualization is used to run Hyper-V inside a Hyper-V virtual machine
@@ -81,9 +85,10 @@ to me if you think the ideas are stubborn or have security holes.
 
 - https://jade.fyi/blog/pinning-nixos-with-npins/
 
-https://mitchellh.com/writing/nix-with-dockerfiles
 https://xeiaso.net/blog/i-was-wrong-about-nix-2020-02-10/
+
 https://github.com/nmattia/niv
+
 -> npins is successor: 
 https://vaibhavsagar.com/blog/2018/05/27/quick-easy-nixpkgs-pinning/
 https://jade.fyi/blog/pinning-packages-in-nix/
