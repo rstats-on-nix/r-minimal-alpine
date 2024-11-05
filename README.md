@@ -55,15 +55,18 @@ to me if you think the ideas are stubborn or have security holes.
   environment for local development, CI, and building the final Docker image for
   for production purposes. *"These problems all go away with Nix."
 
-### Virtualization and networking
+### Virtualization, containers and networking
 
 -  Nested virtualization is used to run Hyper-V inside a Hyper-V virtual machine
    (VM). According to 
    [this Microsoft doc](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization#configure-nested-virtualization), 
    this is e.g. useful for *"Running applications or emulators in a nested VM"*.
    Hey, that's our use case building nix derivations.
-
 - Apparently only Windows 11 supports nested virtualization
+
+- [RedHat blog *"How Podman runs on Macs and other container FAQs"*.](https://www.redhat.com/en/blog/podman-mac-machine-architecture)
+  Deep dive that helped me to understand how the podman client is interacting
+  with the VM, and how
 
 
 https://mitchellh.com/writing/nix-with-dockerfiles
