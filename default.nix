@@ -5,7 +5,7 @@ let
     inherit (pkgs) 
       glibcLocales
       nix
-      podman
+      podman;
   } ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [ pkgs.vfkit ]
     ++ pkgs.lib.optionals pkgs.stdenv.isLinux [ pkgs.qemu ];
   
