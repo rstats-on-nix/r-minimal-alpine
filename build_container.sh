@@ -13,9 +13,9 @@ directory=$2
 
 if [ -n "$WSL_INTEROP" ]; then
     echo "Running in WSL2"
-    podman machine init --user-mode-networking=true
+    podman machine set --user-mode-networking
+    podman machine init --user-mode-networking
     # https://github.com/containers/podman/issues/20921
-    podman machine set --user-mode-networking=true
 fi
 
 
