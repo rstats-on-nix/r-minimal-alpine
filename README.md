@@ -78,8 +78,10 @@ Containers for runtimes such as Docker can also be built directly with Nix.
 - Discord: ["How to build a docker image with a working Nix inside it"](https://discourse.nixos.org/t/how-to-build-a-docker-image-with-a-working-nix-inside-it/32960)
 
 
-
-- Discor
+- [LnL7/nix-docker](https://github.com/LnL7/nix-docker/tree/master).
+  Docker images for the Nix package manager. It is intended to easily "build 
+  a new custom baseimage using specivfic version of nixpkgs", or set up an
+  image that can be used as a remote ssh builder.
 
 ### Virtualization, containers and networking
 
@@ -95,13 +97,17 @@ Containers for runtimes such as Docker can also be built directly with Nix.
   Deep dive that helped me to understand how the podman client is interacting
   with the VM, and how QEMU injection processes etc. work.
 
+- [Xe Iaso: Blog "I was Wrong about Nix"](https://xeiaso.net/)
+
+### Various Nix practices in software engineering
+
+- [Xe Iaso: blog titled "I was Wrong about Nix"]https://xeiaso.net/blog/i-was-wrong-about-nix-2020-02-10/().
+
 ### Pinning mechanisms in Nix
 
-- https://jade.fyi/blog/pinning-nixos-with-npins/
+- [Blog post of Jade: "Pinning NixOS with npins, or how to kill channels forever without flakes"](https://jade.fyi/blog/pinning-nixos-with-npins/).
 
-https://xeiaso.net/blog/i-was-wrong-about-nix-2020-02-10/
-
-https://github.com/nmattia/niv
+- https://github.com/nmattia/niv
 
 -> npins is successor: 
 https://vaibhavsagar.com/blog/2018/05/27/quick-easy-nixpkgs-pinning/
@@ -109,11 +115,6 @@ https://jade.fyi/blog/pinning-packages-in-nix/
 https://github.com/nix-community/docker-nixpkgs
 https://nixery.dev/
 
-
-
-
--> https://github.com/cloudwatt/nix-container-images
-https://github.com/LnL7/nix-docker -> makes sense
 
 
 
