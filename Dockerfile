@@ -45,15 +45,15 @@ COPY . /app
 
 VOLUME [ "/sys/fs/cgroup" ]
 
-# Alpine docker images allow only a single process to be launched
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-
 ENV PATH="${PATH}:/nix/var/nix/profiles/default/bin"
 
 RUN source /etc/profile.d/nix.sh
 RUN source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+
+# Alpine docker images allow only a single process to be launched
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 RUN nix-build /app/default.nix
 
