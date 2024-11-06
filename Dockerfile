@@ -52,4 +52,9 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 ENV PATH="${PATH}:/nix/var/nix/profiles/default/bin"
 
+RUN source /etc/profile.d/nix.sh
+RUN source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+
+RUN nix-build /app/default.nix
+
 CMD ["nix-shell", "/app/"]
