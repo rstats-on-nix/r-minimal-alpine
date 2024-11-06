@@ -10,6 +10,22 @@ efficient data science DevOps workflows.
 This is an experimental proof of concept to deliver a minimal alpine image 
 provinding nix in a multiuser docker environment.
 
+# 🥗 Recipe
+
+
+- Build the image on macOS or linux using pinned nix shebang scripts
+
+```sh
+# nix-shebang script
+./build_container.sh alpine-nix .
+```
+
+- Run the image
+
+```sh
+./run_container.sh alpine-nix
+```
+
 # 🌌 Background story
 
 I've been reading a lot on the internet and I was surprised to find that what I
@@ -41,14 +57,6 @@ Containers for runtimes such as Docker can also be built directly with Nix.
 - For example, `buildLayeredImage` can be used to get caching based on layer 
   content.
 
-# 🥗 Recipe
-
-- Build the image on macOS
-
-```sh
-# nix-shebang script
-./container_build.sh
-```
 
 ## 📚 Varia, inspiration, links
 
@@ -83,6 +91,10 @@ Containers for runtimes such as Docker can also be built directly with Nix.
   a new custom baseimage using specivfic version of nixpkgs", or set up an
   image that can be used as a remote ssh builder.
 
+- [Repo `nix-community/docker-nixpkgs`](https://github.com/nix-community/docker-nixpkgs).
+  A set of Docker images produced with Nix and latest nixpkgs package
+  collection. E.g. provides `docker.nix-community.org/nixpkgs/kubernetes-helm`
+
 ### Virtualization, containers and networking
 
 -  Nested virtualization is used to run Hyper-V inside a Hyper-V virtual machine
@@ -112,14 +124,14 @@ Containers for runtimes such as Docker can also be built directly with Nix.
 -> npins is successor: 
 https://vaibhavsagar.com/blog/2018/05/27/quick-easy-nixpkgs-pinning/
 https://jade.fyi/blog/pinning-packages-in-nix/
-https://github.com/nix-community/docker-nixpkgs
+
 https://nixery.dev/
 
 
 
 
 
-https://github.com/microsoft/WSL/issues/11216
+
 -> no nested virtualization
 
 
