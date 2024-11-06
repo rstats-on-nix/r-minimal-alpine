@@ -31,10 +31,15 @@ to me if you think the ideas are stubborn or have security holes.
 
 # 🔀 Ways forward, backporting
 
-- I heard that `pkgs.dockerTools.buildImage` can make potentially smaller docker
+Containers for runtimes such as Docker can also be built directly with Nix.
+
+- `pkgs.dockerTools.buildImage` can make potentially smaller docker
   images. So yeah, the same `Dockerfile` can maybe just be injected into
   `podman run` using `result`. Say "hi" to declarative `docker.nix` files for
   cross-platform nix builds.
+
+- For example, `buildLayeredImage` can be used to get caching based on layer 
+  content.
 
 # 🥗 Recipe
 
@@ -66,7 +71,15 @@ to me if you think the ideas are stubborn or have security holes.
 
 - [Nixery: an ad-hoc container image registry that provides packages from the Nix package manager.](https://nixery.dev/)
 
+- [tazjin's blog: "Nixery: Improved Layering Design](https://tazj.in/blog/nixery-layers).
+  Discusses layering strategies and algorithms that optimizes the layering
+  strategy and minimixes caches.
+
 - Discord: ["How to build a docker image with a working Nix inside it"](https://discourse.nixos.org/t/how-to-build-a-docker-image-with-a-working-nix-inside-it/32960)
+
+
+
+- Discor
 
 ### Virtualization, containers and networking
 
@@ -75,6 +88,7 @@ to me if you think the ideas are stubborn or have security holes.
    [this Microsoft doc](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization#configure-nested-virtualization), 
    this is e.g. useful for *"Running applications or emulators in a nested VM"*.
    Hey, that's our use case building nix derivations.
+
 - Apparently only Windows 11 supports nested virtualization
 
 - [RedHat blog *"How Podman runs on Macs and other container FAQs"*.](https://www.redhat.com/en/blog/podman-mac-machine-architecture)
@@ -94,12 +108,13 @@ https://vaibhavsagar.com/blog/2018/05/27/quick-easy-nixpkgs-pinning/
 https://jade.fyi/blog/pinning-packages-in-nix/
 https://github.com/nix-community/docker-nixpkgs
 https://nixery.dev/
-https://tazj.in/blog/nixery-layers
-https://discourse.nixos.org/t/how-to-build-a-docker-image-with-a-working-nix-inside-it/32960/7
-https://discourse.nixos.org/t/docker-image-build-with-nix-and-includes-nix-installed-in-multi-user-mode/593/9
+
+
+
+
 -> https://github.com/cloudwatt/nix-container-images
 https://github.com/LnL7/nix-docker -> makes sense
-https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization#configure-nested-virtualization
+
 
 
 
